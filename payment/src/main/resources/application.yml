@@ -1,0 +1,5 @@
+server:
+  port: 5035
+spring:
+  application:
+    name: payment

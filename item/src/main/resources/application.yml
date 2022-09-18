@@ -1,0 +1,5 @@
+server:
+  port: 5020
+spring:
+  application:
+    name: item

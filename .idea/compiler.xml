@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="seller" />
+        <module name="item" />
+        <module name="mobile-payment" />
+        <module name="sms" />
+        <module name="payment" />
+        <module name="login" />
+        <module name="eureka-server" />
+        <module name="email" />
+        <module name="register" />
+        <module name="authentication" />
+        <module name="buyer" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
