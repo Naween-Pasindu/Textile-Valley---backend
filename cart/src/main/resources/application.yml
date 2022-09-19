@@ -1,0 +1,10 @@
+server:
+  port: 5065
+spring:
+  application:
+    name: cart
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://tourx.cft49dmwpe66.ap-southeast-1.rds.amazonaws.com:3306/Textile-Valley
+    username: textileValley
+    password: qwer1234
