@@ -1,0 +1,5 @@
+server:
+  port: 5045
+spring:
+  application:
+    name: seller
