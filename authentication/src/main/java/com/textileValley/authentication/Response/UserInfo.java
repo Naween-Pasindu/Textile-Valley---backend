@@ -3,13 +3,13 @@ package com.textileValley.authentication.Response;
 public class UserInfo {
 	
 //	-------------1.14.22-------------------
-	private String userName;
+	private int userName;
 	private Object roles;
 	
-	public String getUserName() {
+	public int getUserName() {
 		return userName;
 	}
-	public void setUserName(String userName) {
+	public void setUserName(int userName) {
 		this.userName = userName;
 	}
 	public Object getRoles() {

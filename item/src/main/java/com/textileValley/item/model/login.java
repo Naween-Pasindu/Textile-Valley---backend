@@ -1,17 +1,16 @@
-package com.textileValley.authentication.model;
+package com.textileValley.item.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "login")
-public class login{
+public class login {
 
 	@Id
+	@GeneratedValue
 	private int id;
 	private int userId;
 
@@ -24,6 +23,14 @@ public class login{
 	private String passwordhashed;
 
 	private String userName;
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
 
 	public String getUserName() {
 		return userName;
@@ -73,16 +80,7 @@ public class login{
 		this.passwordhashed = passwordhashed;
 	}
 
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-
 	public login() {
 
 	}
-
 };
