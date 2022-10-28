@@ -5,6 +5,14 @@ spring:
     name: cart
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://tourx.cft49dmwpe66.ap-southeast-1.rds.amazonaws.com:3306/Textile-Valley
-    username: textileValley
-    password: qwer1234
+    url: jdbc:mysql://localhost:3306/Textile-Valley?useSSL=true
+    username: root
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+    show-sql: true
