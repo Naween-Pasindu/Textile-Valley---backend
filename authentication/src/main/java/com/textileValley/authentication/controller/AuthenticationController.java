@@ -44,6 +44,8 @@ public class AuthenticationController {
 		
 		String userName = authenticationRequest.getUsername();
 		String password = authenticationRequest.getPassword();
+
+		System.out.println("sucess 2");
 		
 		try {
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userName,password));
@@ -69,20 +71,10 @@ public class AuthenticationController {
 		
 	}
 	
-	@GetMapping("/testing")
-	private String Testing() {
-		return "Welcome to dashboard" +" "+ SecurityContextHolder.getContext().getAuthentication().getName();
-		
-	}
-	
 //	@PreAuthorize("hasaccountState('MODERATOR') or hasaccountState('ADMIN')")
 //	--------------1.13.50---------------
-	@GetMapping("/auth/userinfo")
+	@GetMapping("/textile-valley/auth/userinfo")
 	private ResponseEntity<?> userInfo(Principal user) {
-		
-//		---------1.13.55---------
-//		Registered_Customer loadUser = new Registered_Customer();
-//		Registered_Customer loadUser = (Registered_Customer) userService.loadUserByUsername(user.getName());
 		
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		Collection<? extends GrantedAuthority> role = SecurityContextHolder.getContext().getAuthentication().getAuthorities();
@@ -90,11 +82,9 @@ public class AuthenticationController {
 		UserInfo userInfo = new UserInfo();
 		userInfo.setUserName(username);
 		userInfo.setRoles(role);
-		
-//		Registered_Customer foundUser = userRepository.findByuserName(userName);
+
 		return ResponseEntity.ok(userInfo);
-		
-//		-----------1.20.08-------------------------------------------
+
 		
 	}
 
