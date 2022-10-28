@@ -16,9 +16,12 @@ import javax.persistence.*;
 public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "cartId")
     private long cartId;
 
-    @ManyToOne
-    private Buyer buyerId;
+//    @ManyToOne
+    @Column(name = "buyerId")
+//    private Buyer buyerId;
+    private long buyerId;
 
 }

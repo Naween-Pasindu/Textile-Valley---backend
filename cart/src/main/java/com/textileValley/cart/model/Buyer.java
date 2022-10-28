@@ -27,7 +27,4 @@ public class Buyer {
 
     @Column(name = "contact")
     private String contact;
-    @OneToMany(mappedBy = "buyerId")
-    private List<Cart> cart;
-
 }
