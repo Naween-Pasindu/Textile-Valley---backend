@@ -3,6 +3,7 @@ package com.textileValley.authentication.controller;
 import com.textileValley.authentication.Response.LoginResponse;
 import com.textileValley.authentication.Response.UserInfo;
 import com.textileValley.authentication.model.AuthenticationRequest;
+import com.textileValley.authentication.model.login;
 import com.textileValley.authentication.repository.UserRepository;
 import com.textileValley.authentication.service.UserService;
 import com.textileValley.authentication.util.JwtUtil;
@@ -34,6 +35,10 @@ public class AuthenticationController {
 	
 	@Autowired
 	private JwtUtil jwtUtil;
+
+	@Autowired
+	private UserRepository userrepo;
+
 	
 	
 	@Autowired
@@ -44,6 +49,8 @@ public class AuthenticationController {
 		
 		String userName = authenticationRequest.getUsername();
 		String password = authenticationRequest.getPassword();
+
+		System.out.println("sucess 2");
 		
 		try {
 			authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userName,password));
@@ -56,9 +63,7 @@ public class AuthenticationController {
 		
 		String name = loadedUser.getUsername();
 //		System.out.println(name);
-		
-//		-----------------newly added--1.08.39-NI------------------------------------------
-//		Registered_Customer user = (Registered_Customer) authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userName,password)).getPrincipal();
+
 		String generatedToken = jwtUtil.generateToken(name);
 		
 		LoginResponse response = new LoginResponse();
@@ -68,33 +73,22 @@ public class AuthenticationController {
 //		return ResponseEntity.ok(new AuthenticationResponse(generatedToken));
 		
 	}
-	
-	@GetMapping("/testing")
-	private String Testing() {
-		return "Welcome to dashboard" +" "+ SecurityContextHolder.getContext().getAuthentication().getName();
-		
-	}
-	
-//	@PreAuthorize("hasaccountState('MODERATOR') or hasaccountState('ADMIN')")
-//	--------------1.13.50---------------
-	@GetMapping("/auth/userinfo")
+
+	@GetMapping("/textile-valley/auth/userinfo")
 	private ResponseEntity<?> userInfo(Principal user) {
-		
-//		---------1.13.55---------
-//		Registered_Customer loadUser = new Registered_Customer();
-//		Registered_Customer loadUser = (Registered_Customer) userService.loadUserByUsername(user.getName());
 		
 		String username = SecurityContextHolder.getContext().getAuthentication().getName();
 		Collection<? extends GrantedAuthority> role = SecurityContextHolder.getContext().getAuthentication().getAuthorities();
 
+		login login1 = userrepo.findByuserName(username);
+		int userId = login1.getUserId();
+
 		UserInfo userInfo = new UserInfo();
-		userInfo.setUserName(username);
+		userInfo.setUserName(userId);
 		userInfo.setRoles(role);
-		
-//		Registered_Customer foundUser = userRepository.findByuserName(userName);
+
 		return ResponseEntity.ok(userInfo);
-		
-//		-----------1.20.08-------------------------------------------
+
 		
 	}
 
