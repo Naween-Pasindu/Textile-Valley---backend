@@ -1,5 +1,5 @@
 server:
-  port: 5020
+  port: 5070
 spring:
   application:
     name: item

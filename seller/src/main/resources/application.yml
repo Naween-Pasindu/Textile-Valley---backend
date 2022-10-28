@@ -1,5 +1,5 @@
 server:
-  port: 5045
+  port: 5090
 spring:
   application:
     name: seller

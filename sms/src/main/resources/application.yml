@@ -1,5 +1,5 @@
 server:
-  port: 5050
+  port: 5060
 spring:
   application:
     name: sms
