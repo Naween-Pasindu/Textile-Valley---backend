@@ -1,21 +1,24 @@
 package com.textileValley.cart.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.*;
 
 @Data
+@Entity
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "cart")
 public class Cart {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long cartId;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, orphanRemoval = false)
-    private List<Buyer> buyerId = new ArrayList<>();
+    @ManyToOne
+    private Buyer buyerId;
 
 }
