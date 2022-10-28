@@ -20,7 +20,6 @@
     <module>buyer</module>
     <module>seller</module>
     <module>mobile-payment</module>
-    <module>eureka-server</module>
     <module>cart</module>
   </modules>
 
@@ -32,8 +31,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <spring.boot.maven.plugin.version>2.7.3</spring.boot.maven.plugin.version>
-    <spring.boot.dependencies.version>2.7.3</spring.boot.dependencies.version>
+    <spring.boot.maven.plugin.version>2.4.5</spring.boot.maven.plugin.version>
+    <spring.boot.dependencies.version>2.4.5</spring.boot.dependencies.version>
     <spring.cloud-version>2021.0.3</spring.cloud-version>
     <image>amigoscode/${project.artifactId}:${project.version}</image>
   </properties>
@@ -66,9 +65,19 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
     </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.springframework.cloud</groupId>-->
+<!--      <artifactId>spring-cloud-starter-openfeign</artifactId>-->
+<!--    </dependency>-->
     <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-openfeign</artifactId>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.6</version>
+    </dependency>
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt</artifactId>
+      <version>0.9.1</version>
     </dependency>
   </dependencies>
 
