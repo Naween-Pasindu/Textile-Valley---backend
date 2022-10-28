@@ -13,7 +13,6 @@
         <module name="sms" />
         <module name="payment" />
         <module name="login" />
-        <module name="eureka-server" />
         <module name="email" />
         <module name="cart" />
         <module name="register" />
@@ -21,5 +20,8 @@
         <module name="buyer" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="eureka-server" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
