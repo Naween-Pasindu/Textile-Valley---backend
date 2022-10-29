@@ -3,25 +3,25 @@ package com.textileValley.cart.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import javax.persistence.*;
 
 @Data
 @Entity
-@ToString
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "cart")
-public class Cart {
+@Table(name = "cartitem")
+public class CartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cartId")
     private long cartId;
 
-//    @ManyToOne
-    @Column(name = "buyerId")
-//    private Buyer buyerId;
-    private long buyerId;
+    @Column(name = "item_id")
+    private long itemId;
 
+    @Column(name = "size")
+    private int size;
+
+    @Column(name = "quantity")
+    private int quantity;
 }

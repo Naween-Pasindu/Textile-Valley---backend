@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private long itemId;
 
     @Column(name="itemName")
     private String itemName;

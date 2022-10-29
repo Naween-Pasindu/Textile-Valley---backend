@@ -1,11 +1,17 @@
 package com.textileValley.cart.service;
 
+import com.textileValley.cart.model.Buyer;
 import com.textileValley.cart.model.Cart;
-import com.textileValley.cart.repository.IcartRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.textileValley.cart.model.Item;
 
-@Service
+import java.util.List;
+
 public interface IcartService {
-    Cart addCart(Cart cart);
+
+    Buyer findByBuyerId(Long buyerId);
+    
+    Cart createCart(Cart cart);
+    List<Item> getItemInCart(Long buyerId);
+
+    Cart findCartByBuyerId(Long buyerId);
 }

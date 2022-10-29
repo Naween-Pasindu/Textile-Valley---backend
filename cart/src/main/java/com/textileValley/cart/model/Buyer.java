@@ -16,7 +16,7 @@ import java.util.List;
 @Table(name ="buyer")
 public class Buyer {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long userId;
 
     @Column(name = "fullName")
