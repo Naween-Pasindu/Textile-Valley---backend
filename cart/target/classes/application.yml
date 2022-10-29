@@ -1,8 +1,8 @@
 server:
-  port: 5070
+  port: 5110
 spring:
   application:
-    name: item
+    name: cart
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/Textile-Valley?useSSL=true

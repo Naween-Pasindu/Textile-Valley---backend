@@ -1,0 +1,5 @@
+server:
+  port: 5100
+spring:
+  application:
+    name: mobile-payment

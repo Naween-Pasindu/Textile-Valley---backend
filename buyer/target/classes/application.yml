@@ -1,8 +1,8 @@
 server:
-  port: 5010
+  port: 5080
 spring:
   application:
-    name: login
+    name: buyer
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/Textile-Valley?useSSL=true
