@@ -25,12 +25,6 @@ public class ManageItemsController {
         return null;
     }
 
-    //	display items
-    @GetMapping("/textile-valley/users")
-    public List<Items> findAllItems() {
-        return itemRepository.findAll();
-    }
-
     @GetMapping("/textile-valley/users/{id}")
     public List<Items> findItems(@PathVariable int id) {
 
@@ -57,5 +51,11 @@ public class ManageItemsController {
         System.out.println(id);
         itemRepository.delete(item);
         return "product removed !! " + id;
+    }
+
+    //	display items
+    @GetMapping("/textile-valley/items")
+    public List<Items> findAllItems() {
+        return itemRepository.findAll();
     }
 }
